@@ -1,7 +1,13 @@
-import { CheckCircle, AlertTriangle, FileX, GitBranch, Users, Layers } from "lucide-react";
+import { CheckCircle, AlertTriangle, FileX, GitBranch, Users, Layers, Settings } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const painPoints = [
+  {
+    icon: Settings,
+    title: "开发流程复杂、质量标准高",
+    problem: "汽车零部件产品开发过程涉及产品设计和验证、工程开发、样件试制、测试验证、生产准备等多个阶段，流程环环相扣。每个环节都有严格的质量标准和规范要求，传统的手工管理方式难以应对如此复杂的流程控制需求。",
+    solution: "LeanTrack为汽车零部件行业量身定制，内置完整的产品开发流程模板，从立项到投产全生命周期管理，每个阶段都有明确的质量检查点和标准化操作指南，大幅简化流程管理复杂度。"
+  },
   {
     icon: AlertTriangle,
     title: "APQP流程执行不规范",
