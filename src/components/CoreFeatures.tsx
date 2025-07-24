@@ -13,51 +13,59 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const features = [
   {
     icon: Layout,
-    title: "标准管理",
-    description: "标准阶段定义、标准任务定义、项目模板管理，建立统一的项目管理标准和规范",
-    benefits: ["标准阶段定义", "标准任务定义", "项目模板库", "管理规范化"]
+    title: "体系与标准",
+    subtitle: "构建统一的开发标准体系",
+    description: "支持企业构建适用于自身或客户需求的开发流程标准，包括阶段划分、任务模板、评审规则等，确保各类产品项目执行的一致性与合规性。",
+    benefits: ["阶段标准化", "任务模板化", "评审规范化", "流程一致性"]
   },
   {
     icon: GanttChart,
-    title: "项目进度可视化",
-    description: "支持甘特图、里程碑与任务管理，直观展示项目进度，实时跟踪项目状态",
-    benefits: ["甘特图可视化", "里程碑管理", "任务进度跟踪", "关键路径分析"]
+    title: "项目可视化",
+    subtitle: "全流程进展可视、透明、可控",
+    description: "通过里程碑与任务级的甘特图视图，实现项目进度、关键节点、资源分配的可视化管理，方便管理者进行状态监控和资源协调。",
+    benefits: ["甘特图视图", "里程碑管理", "资源可视化", "状态监控"]
   },
   {
     icon: Users,
     title: "跨部门协同研发",
-    description: "打破部门壁垒，实现跨部门团队协作，提升研发效率和沟通协调能力",
-    benefits: ["跨部门协作", "团队沟通", "任务协调", "资源共享"]
+    subtitle: "打通业务墙，统一作业平台",
+    description: "面向产品开发多角色协作特性（研发、工艺、质量、采购等），实现跨部门统一任务分配、消息通知与流程协同，消除信息孤岛。",
+    benefits: ["多角色协作", "统一任务分配", "消息通知", "流程协同"]
   },
   {
     icon: AlertCircle,
     title: "问题与风险管理",
-    description: "完整的问题管理体系，包含整改措施跟踪，有效识别、评估和控制项目风险",
-    benefits: ["问题识别跟踪", "风险评估", "整改措施管理", "闭环管理"]
+    subtitle: "推动问题闭环与风险前控",
+    description: "系统支持对项目执行过程中出现的问题、风险进行识别、登记、整改、验证的全过程管理，避免问题重复、风险失控。",
+    benefits: ["问题识别", "风险登记", "整改管理", "验证闭环"]
   },
   {
     icon: CheckSquare,
-    title: "质量与评审",
-    description: "任务审批、阶段评审管理，确保项目质量符合标准，建立完善的质量保证体系",
-    benefits: ["任务审批流程", "阶段评审", "质量检查", "评审记录"]
+    title: "质量与评审控制",
+    subtitle: "全过程质量嵌入开发链条",
+    description: "系统内嵌任务审批与阶段评审机制，确保关键节点和关键任务符合质量要求，实现'预防为主'的质量策划思维。",
+    benefits: ["任务审批", "阶段评审", "质量嵌入", "预防策划"]
   },
   {
     icon: FileText,
-    title: "文档与知识",
-    description: "统一的文档管理和知识库系统，支持版本控制、在线预览，积累企业知识资产",
-    benefits: ["文档管理", "知识库", "版本控制", "在线预览"]
+    title: "文档与经验沉淀",
+    subtitle: "实现企业知识资产化",
+    description: "支持项目全过程中的文档资料集中管理、版本控制与权限共享，沉淀企业知识与经验，并支持后续项目复用。",
+    benefits: ["文档管理", "版本控制", "权限共享", "知识复用"]
   },
   {
     icon: Kanban,
     title: "多组织协作",
-    description: "支持与合作企业共同开发同一个项目，建立安全的外部协作环境，加速产品研发",
-    benefits: ["多企业协作", "项目共享", "权限管理", "安全协作"]
+    subtitle: "打通企业与合作伙伴的联合开发",
+    description: "支持企业与外部合作方（如设计方、供应商或客户）共同参与项目执行，实现统一任务协作、资料提交与进度同步。",
+    benefits: ["外部协作", "统一任务", "资料提交", "进度同步"]
   },
   {
     icon: BarChart3,
     title: "项目数据分析",
-    description: "全面的项目数据分析和报表系统，为管理决策提供数据支持，持续优化项目管理",
-    benefits: ["数据分析", "项目报表", "决策支持", "绩效评估"]
+    subtitle: "用数据驱动决策与持续改进",
+    description: "系统通过多维度的数据可视化能力，帮助企业洞察项目执行质量、周期表现、资源投入与风险趋势，驱动管理优化。",
+    benefits: ["数据可视化", "多维分析", "趋势洞察", "决策支持"]
   }
 ];
 
@@ -109,9 +117,14 @@ export const CoreFeatures = () => {
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
                     </div>
                   </div>
-                  <CardTitle className="text-xl font-bold text-center text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-xl font-bold text-center text-foreground leading-tight group-hover:text-primary transition-colors duration-300 mb-2">
                     {feature.title}
                   </CardTitle>
+                  {feature.subtitle && (
+                    <p className="text-sm font-medium text-center text-primary/80 mb-4">
+                      {feature.subtitle}
+                    </p>
+                  )}
                 </CardHeader>
                 <CardContent className="pt-0 pb-8">
                   <CardDescription className="text-center text-muted-foreground leading-relaxed mb-6 text-sm">
